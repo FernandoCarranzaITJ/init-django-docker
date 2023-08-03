@@ -1,7 +1,11 @@
 from django.contrib import admin
-from .models import Task
+from .models import Task, Comment
 # Register your models here.
 
 @admin.register(Task)
 class TaskAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['id','title','priority','created_at',]
+
+@admin.register(Comment)
+class Comment(admin.ModelAdmin):
+    list_display = ['id','comment']
